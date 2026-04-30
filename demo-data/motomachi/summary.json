@@ -1,0 +1,21 @@
+{
+  "client": "motomachi",
+  "days": 7,
+  "metrics": {
+    "ig_reach": [3242, 3856, 2987, 4123, 4456, 3567, 3892],
+    "fb_reach": [1156, 1342, 1098, 1678, 1456, 1023, 1289],
+    "threads_views": [892, 1156, 743, 1342, 1234, 678, 987],
+    "ugc_count": {
+      "ig": 12,
+      "fb": 4,
+      "threads": 6
+    },
+    "ugc_top_score": {
+      "ig": 0.84,
+      "fb": 0.52,
+      "threads": 0.71
+    }
+  },
+  "last_updated": "2026-04-30T10:00:00.000Z",
+  "_demo": true
+}

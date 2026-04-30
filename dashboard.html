@@ -73,7 +73,19 @@
   .creators-table tr:last-child { border-bottom: none; }
   .status-active { color: #38a169; font-weight: 600; }
   .status-dormant { color: #a0aec0; }
+
+  .chart-section { margin-top: 32px; }
+  .chart-section h2 { margin: 0 0 16px; font-size: 18px; }
+  .chart-grid { display: grid; gap: 20px; grid-template-columns: 1fr; }
+  @media (min-width: 900px) { .chart-grid { grid-template-columns: 2fr 1fr; } }
+  .chart-card {
+    background: white; border-radius: 8px; padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .chart-card h3 { margin: 0 0 16px; font-size: 14px; color: #4a5568; text-transform: uppercase; letter-spacing: 0.5px; }
+  .chart-container { position: relative; height: 300px; }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
 
@@ -121,6 +133,21 @@
     </div>
   </div>
 
+  <!-- Charts -->
+  <section class="chart-section">
+    <h2>📈 トレンド分析</h2>
+    <div class="chart-grid">
+      <div class="chart-card">
+        <h3>📊 日次リーチ推移（7日）</h3>
+        <div class="chart-container"><canvas id="reachChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h3>🏆 UGCスコア分布</h3>
+        <div class="chart-container"><canvas id="scoreChart"></canvas></div>
+      </div>
+    </div>
+  </section>
+
   <!-- UGC Score Ranking -->
   <section class="ugc-section">
     <h2>🏆 UGC スコアランキング（4軸×重み付き総合）</h2>
@@ -156,6 +183,8 @@
 
 <script>
 const DEMO_BASE = 'https://suzuki-masahito.github.io/privacy-policy/demo-data';
+let reachChartInstance = null;
+let scoreChartInstance = null;
 
 async function loadDashboard() {
   const client = document.getElementById('clientSelect').value;
@@ -170,8 +199,10 @@ async function loadDashboard() {
       document.getElementById('threads-views').textContent = sumArray(summary.metrics.threads_views).toLocaleString();
       const ugcTotal = (summary.metrics.ugc_count.ig || 0) + (summary.metrics.ugc_count.fb || 0) + (summary.metrics.ugc_count.threads || 0);
       document.getElementById('ugc-count').textContent = ugcTotal.toLocaleString();
+      renderReachChart(summary.metrics);
     } else {
       ['ig-reach', 'fb-reach', 'threads-views', 'ugc-count'].forEach(id => document.getElementById(id).textContent = '—');
+      clearChart('reachChart', reachChartInstance);
     }
   } catch (e) {
     console.error('summary fetch failed:', e);
@@ -183,8 +214,10 @@ async function loadDashboard() {
     if (ugcResp.ok) {
       const ugcs = await ugcResp.json();
       renderUGCs(ugcs.items || []);
+      renderScoreChart(ugcs.items || []);
     } else {
       document.getElementById('ugcList').innerHTML = `<div class="empty-state">${client} のUGCデモデータなし</div>`;
+      clearChart('scoreChart', scoreChartInstance);
     }
   } catch (e) {
     document.getElementById('ugcList').innerHTML = `<div class="empty-state">取得エラー: ${e.message}</div>`;
@@ -257,6 +290,50 @@ function sumArray(arr) {
 function escapeHtml(s) {
   const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
   return String(s || '').replace(/[&<>"']/g, m => map[m]);
+}
+
+function renderReachChart(metrics) {
+  const ctx = document.getElementById('reachChart');
+  if (reachChartInstance) reachChartInstance.destroy();
+  const labels = (metrics.ig_reach || []).map((_, i) => `Day ${-(metrics.ig_reach.length - 1 - i)}`);
+  reachChartInstance = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        { label: 'Instagram', data: metrics.ig_reach, borderColor: '#e4405f', backgroundColor: 'rgba(228,64,95,0.1)', tension: 0.3, fill: true },
+        { label: 'Facebook', data: metrics.fb_reach, borderColor: '#1877f2', backgroundColor: 'rgba(24,119,242,0.1)', tension: 0.3, fill: true },
+        { label: 'Threads', data: metrics.threads_views, borderColor: '#1a1a1a', backgroundColor: 'rgba(26,26,26,0.1)', tension: 0.3, fill: true }
+      ]
+    },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
+  });
+}
+
+function renderScoreChart(items) {
+  const ctx = document.getElementById('scoreChart');
+  if (scoreChartInstance) scoreChartInstance.destroy();
+  const buckets = { '★高': 0, '中': 0, '低': 0 };
+  items.forEach(u => {
+    if (u.verdict.includes('★高')) buckets['★高']++;
+    else if (u.verdict === '中') buckets['中']++;
+    else buckets['低']++;
+  });
+  scoreChartInstance = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['★高', '中', '低'],
+      datasets: [{
+        data: [buckets['★高'], buckets['中'], buckets['低']],
+        backgroundColor: ['#d69e2e', '#4299e1', '#a0aec0']
+      }]
+    },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
+  });
+}
+
+function clearChart(canvasId, instance) {
+  if (instance) instance.destroy();
 }
 
 loadDashboard();

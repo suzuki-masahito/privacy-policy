@@ -1,0 +1,79 @@
+{
+  "client": "sanno",
+  "count": 13,
+  "items": [
+    {
+      "platform": "Threads",
+      "id": "sn_th_001",
+      "posted_at": "2026-04-29T03:00:00.000Z",
+      "author": "pickle_tokyo",
+      "text": "渋谷の山王スポーツでピックルボール体験してきた。コートも綺麗で初心者にも親切！ #ピックルボール #渋谷",
+      "reach": 5234,
+      "engagement": 245,
+      "breakdown": { "impact": 0.823, "conversion": 0.65, "continuity": 0.42, "alignment": 1.0 },
+      "total_score": 0.778,
+      "verdict": "★高"
+    },
+    {
+      "platform": "Threads",
+      "id": "sn_th_002",
+      "posted_at": "2026-04-27T03:00:00.000Z",
+      "author": "floorball_japan",
+      "text": "山王スポーツでフロアボール買えました。日本でフロアボール用品扱ってる店少ないから貴重。サンノさんありがとう",
+      "reach": 1823,
+      "engagement": 67,
+      "breakdown": { "impact": 0.612, "conversion": 0.5, "continuity": 0.5, "alignment": 1.0 },
+      "total_score": 0.634,
+      "verdict": "★高"
+    },
+    {
+      "platform": "IG",
+      "id": "sn_ig_001",
+      "posted_at": "2026-04-26T03:00:00.000Z",
+      "author": "@minor_sports_lover",
+      "text": "ピックルボール体験 at 山王スポーツ 渋谷。初心者でも楽しめるって聞いてたけど本当だった",
+      "reach": 2145,
+      "engagement": 89,
+      "breakdown": { "impact": 0.534, "conversion": 0.5, "continuity": 0.25, "alignment": 1.0 },
+      "total_score": 0.583,
+      "verdict": "★高"
+    },
+    {
+      "platform": "Threads",
+      "id": "sn_th_003",
+      "posted_at": "2026-04-24T03:00:00.000Z",
+      "author": "shibuya_yoga",
+      "text": "渋谷でスポーツ用品買うなら山王スポーツ。MEO強化された影響かレビュー400件超え",
+      "reach": 1234,
+      "engagement": 45,
+      "breakdown": { "impact": 0.487, "conversion": 0.5, "continuity": 0.0, "alignment": 0.85 },
+      "total_score": 0.412,
+      "verdict": "中"
+    },
+    {
+      "platform": "FB",
+      "id": "sn_fb_001",
+      "posted_at": "2026-04-23T03:00:00.000Z",
+      "author": "佐藤 由美",
+      "text": "サンノスポーツ、ピックルボールのレッスン受けました。インストラクターが丁寧で初心者でも楽しめました",
+      "reach": 0,
+      "engagement": 0,
+      "breakdown": { "impact": 0.0, "conversion": 0.5, "continuity": 0.0, "alignment": 1.0 },
+      "total_score": 0.350,
+      "verdict": "中"
+    },
+    {
+      "platform": "Threads",
+      "id": "sn_th_004",
+      "posted_at": "2026-04-22T03:00:00.000Z",
+      "author": "tennis_lover_jp",
+      "text": "テニス用品見に行ったけど、ピックルボールの方が気になった",
+      "reach": 678,
+      "engagement": 23,
+      "breakdown": { "impact": 0.234, "conversion": 0.0, "continuity": 0.0, "alignment": 0.65 },
+      "total_score": 0.168,
+      "verdict": "低"
+    }
+  ],
+  "_demo": true
+}

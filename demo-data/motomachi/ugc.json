@@ -1,0 +1,103 @@
+{
+  "client": "motomachi",
+  "count": 22,
+  "items": [
+    {
+      "platform": "IG",
+      "id": "mb_ig_001",
+      "posted_at": "2026-04-28T03:00:00.000Z",
+      "author": "@enjoy_diet_miyan",
+      "text": "Motomachi Bay Fitnessでダイエット連載第8回！HYROXトレーニング始めました。3ヶ月で-7kg継続中 #モトマチベイ #HYROX #ダイエット",
+      "reach": 18925,
+      "engagement": 524,
+      "breakdown": { "impact": 0.876, "conversion": 0.65, "continuity": 1.0, "alignment": 1.0 },
+      "total_score": 0.838,
+      "verdict": "★高"
+    },
+    {
+      "platform": "IG",
+      "id": "mb_ig_002",
+      "posted_at": "2026-04-26T03:00:00.000Z",
+      "author": "@shudentv",
+      "text": "HYROX練習@モトマチベイ。1kmランニング+50回エクササイズの組み合わせきつい。本気でやれる施設は貴重",
+      "reach": 14498,
+      "engagement": 580,
+      "breakdown": { "impact": 0.745, "conversion": 0.5, "continuity": 0.42, "alignment": 1.0 },
+      "total_score": 0.626,
+      "verdict": "★高"
+    },
+    {
+      "platform": "Threads",
+      "id": "mb_th_001",
+      "posted_at": "2026-04-29T03:00:00.000Z",
+      "author": "kk.move_",
+      "text": "モトマチベイのコーチ、本当にニッチな部位指導してくれる。普通のジムでは絶対無理 #personalize",
+      "reach": 1736,
+      "engagement": 67,
+      "breakdown": { "impact": 0.625, "conversion": 0.5, "continuity": 1.0, "alignment": 1.0 },
+      "total_score": 0.713,
+      "verdict": "★高"
+    },
+    {
+      "platform": "IG",
+      "id": "mb_ig_003",
+      "posted_at": "2026-04-25T03:00:00.000Z",
+      "author": "@ta1ch1_y",
+      "text": "Motomachi Bay最高。コミュニティ感あって続けやすい",
+      "reach": 1909,
+      "engagement": 80,
+      "breakdown": { "impact": 0.563, "conversion": 0.5, "continuity": 0.33, "alignment": 1.0 },
+      "total_score": 0.524,
+      "verdict": "中"
+    },
+    {
+      "platform": "Threads",
+      "id": "mb_th_002",
+      "posted_at": "2026-04-23T03:00:00.000Z",
+      "author": "yokohama_gym_blog",
+      "text": "横浜のHYROX対応ジム。Motomachi Bay Fitness は競技志向の人におすすめ",
+      "reach": 4521,
+      "engagement": 142,
+      "breakdown": { "impact": 0.612, "conversion": 0.0, "continuity": 0.0, "alignment": 0.85 },
+      "total_score": 0.311,
+      "verdict": "中"
+    },
+    {
+      "platform": "FB",
+      "id": "mb_fb_001",
+      "posted_at": "2026-04-22T03:00:00.000Z",
+      "author": "山田 健太",
+      "text": "元町ベイフィットネス、設備が充実していて毎日通いたくなる",
+      "reach": 0,
+      "engagement": 0,
+      "breakdown": { "impact": 0.0, "conversion": 0.5, "continuity": 0.0, "alignment": 1.0 },
+      "total_score": 0.350,
+      "verdict": "中"
+    },
+    {
+      "platform": "IG",
+      "id": "mb_ig_004",
+      "posted_at": "2026-04-20T03:00:00.000Z",
+      "author": "@nutrimuscle_japan",
+      "text": "Tsukasa様の指導が素晴らしい",
+      "reach": 29276,
+      "engagement": 322,
+      "breakdown": { "impact": 0.0, "conversion": 0.0, "continuity": 0.083, "alignment": 0.0 },
+      "total_score": 0.012,
+      "verdict": "低"
+    },
+    {
+      "platform": "IG",
+      "id": "mb_ig_005",
+      "posted_at": "2026-04-15T03:00:00.000Z",
+      "author": "@ramichan3",
+      "text": "Off-day workout 💪",
+      "reach": 140965,
+      "engagement": 600,
+      "breakdown": { "impact": 0.0, "conversion": 0.0, "continuity": 0.083, "alignment": 0.0 },
+      "total_score": 0.012,
+      "verdict": "低"
+    }
+  ],
+  "_demo": true
+}

@@ -1,0 +1,21 @@
+{
+  "client": "sanno",
+  "days": 7,
+  "metrics": {
+    "ig_reach": [892, 1043, 756, 1234, 1456, 967, 1123],
+    "fb_reach": [342, 412, 289, 567, 489, 321, 398],
+    "threads_views": [234, 312, 198, 423, 367, 198, 287],
+    "ugc_count": {
+      "ig": 4,
+      "fb": 2,
+      "threads": 7
+    },
+    "ugc_top_score": {
+      "ig": 0.58,
+      "fb": 0.32,
+      "threads": 0.78
+    }
+  },
+  "last_updated": "2026-04-30T10:00:00.000Z",
+  "_demo": true
+}

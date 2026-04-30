@@ -1,0 +1,67 @@
+{
+  "client": "sanno",
+  "count": 4,
+  "items": [
+    {
+      "user_id": "sn_creator_001",
+      "platform": "Threads",
+      "username": "pickle_tokyo",
+      "profile_url": "https://threads.net/@pickle_tokyo",
+      "followers": 5234,
+      "relationship_type": "自然発生（顧客）",
+      "first_seen": "2026-03-01",
+      "last_seen": "2026-04-29",
+      "total_ugc_count": 5,
+      "store_mention_rate": 1.0,
+      "avg_like_follower_rate": 0.047,
+      "status": "active",
+      "notes": "★ピックルボール専門アカウント・最重要発信者"
+    },
+    {
+      "user_id": "sn_creator_002",
+      "platform": "Threads",
+      "username": "floorball_japan",
+      "profile_url": "https://threads.net/@floorball_japan",
+      "followers": 1823,
+      "relationship_type": "自然発生（顧客）",
+      "first_seen": "2026-02-15",
+      "last_seen": "2026-04-27",
+      "total_ugc_count": 6,
+      "store_mention_rate": 1.0,
+      "avg_like_follower_rate": 0.037,
+      "status": "active",
+      "notes": "フロアボール専門・ニッチ層代表"
+    },
+    {
+      "user_id": "sn_creator_003",
+      "platform": "IG",
+      "username": "@minor_sports_lover",
+      "profile_url": "https://instagram.com/minor_sports_lover",
+      "followers": 2145,
+      "relationship_type": "自然発生（顧客）",
+      "first_seen": "2026-04-01",
+      "last_seen": "2026-04-26",
+      "total_ugc_count": 3,
+      "store_mention_rate": 1.0,
+      "avg_like_follower_rate": 0.041,
+      "status": "active",
+      "notes": "マイナースポーツ全般・新規層"
+    },
+    {
+      "user_id": "sn_creator_004",
+      "platform": "Threads",
+      "username": "shibuya_yoga",
+      "profile_url": "https://threads.net/@shibuya_yoga",
+      "followers": 1234,
+      "relationship_type": "自然発生（顧客）",
+      "first_seen": "2026-04-15",
+      "last_seen": "2026-04-24",
+      "total_ugc_count": 1,
+      "store_mention_rate": 1.0,
+      "avg_like_follower_rate": 0.036,
+      "status": "active",
+      "notes": "渋谷ローカル・MEO効果検証"
+    }
+  ],
+  "_demo": true
+}
