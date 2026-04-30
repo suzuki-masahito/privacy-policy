@@ -1,0 +1,194 @@
+{
+  "client": "umesato",
+  "count": 11,
+  "items": [
+    {
+      "platform": "IG",
+      "id": "ig_demo_001",
+      "posted_at": "2026-04-28T03:00:00.000Z",
+      "author": "@enjoy_diet_miyan",
+      "text": "今日も梅里カントリークラブでTrackman練習！6ヶ月続けて+15ヤード飛距離アップしました。スコア100切り目前です #梅里CC #TrackMan #ゴルフレッスン",
+      "reach": 13056,
+      "engagement": 449,
+      "breakdown": {
+        "impact": 0.823,
+        "conversion": 0.550,
+        "continuity": 0.833,
+        "alignment": 1.000
+      },
+      "total_score": 0.726,
+      "verdict": "★高"
+    },
+    {
+      "platform": "Threads",
+      "id": "th_demo_003",
+      "posted_at": "2026-04-16T03:00:00.000Z",
+      "author": "shudentv",
+      "text": "梅里CCで練習中！TrackManで300y打てた瞬間",
+      "reach": 5394,
+      "engagement": 214,
+      "breakdown": {
+        "impact": 0.624,
+        "conversion": 0.500,
+        "continuity": 0.250,
+        "alignment": 1.000
+      },
+      "total_score": 0.609,
+      "verdict": "★高"
+    },
+    {
+      "platform": "Threads",
+      "id": "th_demo_001",
+      "posted_at": "2026-04-29T03:00:00.000Z",
+      "author": "kk.move_",
+      "text": "梅里CCのSpectrum、本当におすすめ。データで自分のスイング客観視できる #ゴルフ練習場",
+      "reach": 1736,
+      "engagement": 67,
+      "breakdown": {
+        "impact": 0.569,
+        "conversion": 0.500,
+        "continuity": 0.917,
+        "alignment": 1.000
+      },
+      "total_score": 0.604,
+      "verdict": "★高"
+    },
+    {
+      "platform": "FB",
+      "id": "fb_demo_001",
+      "posted_at": "2026-04-27T03:00:00.000Z",
+      "author": "田中 太郎",
+      "text": "梅里CC とても良い練習場でした。スタッフの方も親切で、TrackManの計測も詳しく説明してくれました。また伺います",
+      "reach": 0,
+      "engagement": 0,
+      "breakdown": {
+        "impact": 0.0,
+        "conversion": 0.500,
+        "continuity": 0.000,
+        "alignment": 1.000
+      },
+      "total_score": 0.350,
+      "verdict": "中"
+    },
+    {
+      "platform": "IG",
+      "id": "ig_demo_002",
+      "posted_at": "2026-04-25T03:00:00.000Z",
+      "author": "@kk.move_",
+      "text": "Spectrumの計測精度すごい。データ可視化されると練習が変わる #梅里CC",
+      "reach": 1762,
+      "engagement": 48,
+      "breakdown": {
+        "impact": 0.355,
+        "conversion": 0.500,
+        "continuity": 0.417,
+        "alignment": 1.000
+      },
+      "total_score": 0.519,
+      "verdict": "中"
+    },
+    {
+      "platform": "IG",
+      "id": "ig_demo_004",
+      "posted_at": "2026-04-18T03:00:00.000Z",
+      "author": "@golfer_takeshi",
+      "text": "梅里でレッスン受けてきた。コーチの指摘がピンポイントで的確",
+      "reach": 2787,
+      "engagement": 96,
+      "breakdown": {
+        "impact": 0.295,
+        "conversion": 0.500,
+        "continuity": 0.083,
+        "alignment": 1.000
+      },
+      "total_score": 0.421,
+      "verdict": "中"
+    },
+    {
+      "platform": "FB",
+      "id": "fb_demo_002",
+      "posted_at": "2026-04-20T03:00:00.000Z",
+      "author": "Yamada Ichiro",
+      "text": "友人と梅里CCに行ってきました！設備が綺麗で、24時間営業なのが嬉しい",
+      "reach": 0,
+      "engagement": 0,
+      "breakdown": {
+        "impact": 0.0,
+        "conversion": 0.500,
+        "continuity": 0.000,
+        "alignment": 1.000
+      },
+      "total_score": 0.350,
+      "verdict": "中"
+    },
+    {
+      "platform": "Threads",
+      "id": "th_demo_002",
+      "posted_at": "2026-04-24T03:00:00.000Z",
+      "author": "tee_off_jp",
+      "text": "日吉のゴルフ練習場どこがおすすめ？",
+      "reach": 372,
+      "engagement": 17,
+      "breakdown": {
+        "impact": 0.193,
+        "conversion": 0.000,
+        "continuity": 0.000,
+        "alignment": 0.330
+      },
+      "total_score": 0.108,
+      "verdict": "低"
+    },
+    {
+      "platform": "IG",
+      "id": "ig_demo_003",
+      "posted_at": "2026-04-22T03:00:00.000Z",
+      "author": "@ramichan3",
+      "text": "Off-Season practice mode 🏌️",
+      "reach": 17712,
+      "engagement": 602,
+      "breakdown": {
+        "impact": 0.286,
+        "conversion": 0.000,
+        "continuity": 0.083,
+        "alignment": 0.000
+      },
+      "total_score": 0.098,
+      "verdict": "低"
+    },
+    {
+      "platform": "FB",
+      "id": "fb_demo_003",
+      "posted_at": "2026-04-12T03:00:00.000Z",
+      "author": "Sato Ken",
+      "text": "良かった",
+      "reach": 0,
+      "engagement": 0,
+      "breakdown": {
+        "impact": 0.0,
+        "conversion": 0.000,
+        "continuity": 0.000,
+        "alignment": 0.000
+      },
+      "total_score": 0.000,
+      "verdict": "低"
+    },
+    {
+      "platform": "IG",
+      "id": "ig_demo_005",
+      "posted_at": "2026-04-10T03:00:00.000Z",
+      "author": "@hyuga_golf",
+      "text": "おすすめのゴルフ練習場",
+      "reach": 372,
+      "engagement": 13,
+      "breakdown": {
+        "impact": 0.0,
+        "conversion": 0.000,
+        "continuity": 0.000,
+        "alignment": 0.000
+      },
+      "total_score": 0.000,
+      "verdict": "低"
+    }
+  ],
+  "_demo": true
+}

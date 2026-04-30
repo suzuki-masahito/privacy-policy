@@ -1,0 +1,82 @@
+{
+  "client": "umesato",
+  "count": 5,
+  "items": [
+    {
+      "user_id": "user_demo_001",
+      "platform": "IG",
+      "username": "@enjoy_diet_miyan",
+      "profile_url": "https://instagram.com/enjoy_diet_miyan",
+      "followers": 15604,
+      "relationship_type": "自然発生（顧客）",
+      "first_seen": "2026-02-28",
+      "last_seen": "2026-04-28",
+      "total_ugc_count": 4,
+      "store_mention_rate": 1.0,
+      "avg_like_follower_rate": 0.027,
+      "status": "active",
+      "notes": "★連載型UGC・継続貢献"
+    },
+    {
+      "user_id": "user_demo_002",
+      "platform": "IG",
+      "username": "@kk.move_",
+      "profile_url": "https://instagram.com/kk.move_",
+      "followers": 398,
+      "relationship_type": "自然発生（顧客）",
+      "first_seen": "2026-03-15",
+      "last_seen": "2026-04-25",
+      "total_ugc_count": 5,
+      "store_mention_rate": 1.0,
+      "avg_like_follower_rate": 0.108,
+      "status": "active",
+      "notes": "小規模ニッチ・最高効率"
+    },
+    {
+      "user_id": "user_demo_003",
+      "platform": "IG",
+      "username": "@ramichan3",
+      "profile_url": "https://instagram.com/ramichan3",
+      "followers": 140965,
+      "relationship_type": "インフルエンサー",
+      "first_seen": "2026-01-29",
+      "last_seen": "2026-04-22",
+      "total_ugc_count": 1,
+      "store_mention_rate": 0.0,
+      "avg_like_follower_rate": 0.004,
+      "status": "dormant",
+      "notes": "ターゲットずれ・効果ゼロ"
+    },
+    {
+      "user_id": "user_demo_004",
+      "platform": "Threads",
+      "username": "kk.move_",
+      "profile_url": "https://threads.net/@kk.move_",
+      "followers": 398,
+      "relationship_type": "自然発生（顧客）",
+      "first_seen": "2026-03-30",
+      "last_seen": "2026-04-29",
+      "total_ugc_count": 8,
+      "store_mention_rate": 0.875,
+      "avg_like_follower_rate": 0.142,
+      "status": "active",
+      "notes": "Threadsで継続発信"
+    },
+    {
+      "user_id": "user_demo_005",
+      "platform": "Threads",
+      "username": "shudentv",
+      "profile_url": "https://threads.net/@shudentv",
+      "followers": 14498,
+      "relationship_type": "自然発生（顧客）",
+      "first_seen": "2026-02-28",
+      "last_seen": "2026-04-16",
+      "total_ugc_count": 3,
+      "store_mention_rate": 1.0,
+      "avg_like_follower_rate": 0.040,
+      "status": "active",
+      "notes": "HYROX真剣層・店名明記"
+    }
+  ],
+  "_demo": true
+}

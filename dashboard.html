@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SNS UGC Dashboard | Demo</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic", sans-serif;
+    margin: 0; background: #f5f7fa; color: #1a202c;
+  }
+  header {
+    background: linear-gradient(135deg, #1877f2 0%, #cc0000 100%);
+    color: white; padding: 24px 32px;
+  }
+  h1 { margin: 0 0 4px; font-size: 24px; }
+  .subtitle { opacity: 0.9; font-size: 13px; }
+  .demo-banner {
+    background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px 24px;
+    color: #92400e; font-size: 13px;
+  }
+  main { max-width: 1280px; margin: 0 auto; padding: 24px; }
+  .controls { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+  select, button {
+    padding: 8px 14px; border: 1px solid #cbd5e0; border-radius: 6px;
+    background: white; font-size: 14px;
+  }
+  button.primary { background: #1877f2; color: white; border-color: #1877f2; cursor: pointer; }
+  button.primary:hover { background: #1565d8; }
+  .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .card {
+    background: white; border-radius: 8px; padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border-top: 3px solid;
+  }
+  .card.ig { border-color: #e4405f; }
+  .card.fb { border-color: #1877f2; }
+  .card.threads { border-color: #1a1a1a; }
+  .card.ads { border-color: #cc0000; }
+  .card h3 { margin: 0 0 12px; font-size: 14px; color: #4a5568; text-transform: uppercase; letter-spacing: 0.5px; }
+  .metric { font-size: 32px; font-weight: 700; color: #1a202c; margin: 4px 0; }
+  .delta { font-size: 13px; color: #718096; }
+  .ugc-section { margin-top: 32px; }
+  .ugc-section h2 { margin: 0 0 16px; font-size: 18px; }
+  .ugc-list { display: grid; gap: 12px; }
+  .ugc-card {
+    background: white; border-radius: 8px; padding: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    display: grid; grid-template-columns: 80px 1fr 120px; gap: 16px; align-items: center;
+  }
+  .platform-badge {
+    display: inline-block; padding: 4px 10px; border-radius: 4px;
+    font-size: 11px; font-weight: 600; color: white; text-align: center;
+  }
+  .platform-badge.IG { background: #e4405f; }
+  .platform-badge.FB { background: #1877f2; }
+  .platform-badge.Threads { background: #1a1a1a; }
+  .ugc-content { font-size: 14px; color: #2d3748; line-height: 1.5; }
+  .ugc-author { font-size: 12px; color: #718096; margin-top: 4px; }
+  .ugc-score-block { text-align: right; }
+  .score { font-size: 22px; font-weight: 700; }
+  .verdict.high { color: #d69e2e; font-weight: 700; }
+  .verdict.mid { color: #4299e1; }
+  .verdict.low { color: #a0aec0; }
+  .breakdown { display: flex; gap: 6px; margin-top: 8px; font-size: 11px; color: #718096; flex-wrap: wrap; }
+  .breakdown span { background: #edf2f7; padding: 2px 6px; border-radius: 3px; }
+  .empty-state { text-align: center; padding: 48px; color: #a0aec0; }
+  .creators-section { margin-top: 32px; }
+  .creators-table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .creators-table th, .creators-table td { padding: 12px 16px; text-align: left; font-size: 13px; }
+  .creators-table th { background: #edf2f7; font-weight: 600; color: #4a5568; }
+  .creators-table tr { border-bottom: 1px solid #e2e8f0; }
+  .creators-table tr:last-child { border-bottom: none; }
+  .status-active { color: #38a169; font-weight: 600; }
+  .status-dormant { color: #a0aec0; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📊 SNS UGC Dashboard</h1>
+  <div class="subtitle">v1.1 — IG / FB / Threads / Meta広告 統合分析</div>
+</header>
+
+<div class="demo-banner">
+  ⚠️ <strong>デモモード</strong> — モックデータで動作中。実データ統合は Meta App Review 承認 + GAS Web App デプロイ後。
+</div>
+
+<main>
+
+  <div class="controls">
+    <select id="clientSelect">
+      <option value="umesato">梅里CC（デモデータあり）</option>
+      <option value="motomachi">モトマチベイ（デモデータなし）</option>
+      <option value="sanno">サンノスポーツ（デモデータなし）</option>
+    </select>
+    <button class="primary" onclick="loadDashboard()">更新</button>
+  </div>
+
+  <!-- KPI cards -->
+  <div class="grid" id="kpiGrid">
+    <div class="card ig">
+      <h3>📷 Instagram リーチ（7日）</h3>
+      <div class="metric" id="ig-reach">—</div>
+      <div class="delta">合計</div>
+    </div>
+    <div class="card fb">
+      <h3>📘 Facebook リーチ（7日）</h3>
+      <div class="metric" id="fb-reach">—</div>
+      <div class="delta">合計</div>
+    </div>
+    <div class="card threads">
+      <h3>🧵 Threads ビュー（7日）</h3>
+      <div class="metric" id="threads-views">—</div>
+      <div class="delta">合計</div>
+    </div>
+    <div class="card ads">
+      <h3>💰 UGC件数（合計）</h3>
+      <div class="metric" id="ugc-count">—</div>
+      <div class="delta">期間内</div>
+    </div>
+  </div>
+
+  <!-- UGC Score Ranking -->
+  <section class="ugc-section">
+    <h2>🏆 UGC スコアランキング（4軸×重み付き総合）</h2>
+    <div class="ugc-list" id="ugcList">
+      <div class="empty-state">データ読込中...</div>
+    </div>
+  </section>
+
+  <!-- Creators -->
+  <section class="creators-section">
+    <h2>👥 クリエイター辞書</h2>
+    <table class="creators-table">
+      <thead>
+        <tr>
+          <th>プラットフォーム</th>
+          <th>ユーザー名</th>
+          <th>フォロワー</th>
+          <th>関係性</th>
+          <th>UGC数</th>
+          <th>店名言及率</th>
+          <th>like/follower率</th>
+          <th>状態</th>
+          <th>メモ</th>
+        </tr>
+      </thead>
+      <tbody id="creatorsTable">
+        <tr><td colspan="9" class="empty-state">読込中...</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<script>
+const DEMO_BASE = 'https://suzuki-masahito.github.io/privacy-policy/demo-data';
+
+async function loadDashboard() {
+  const client = document.getElementById('clientSelect').value;
+
+  try {
+    // Summary
+    const summaryResp = await fetch(`${DEMO_BASE}/${client}/summary.json`);
+    if (summaryResp.ok) {
+      const summary = await summaryResp.json();
+      document.getElementById('ig-reach').textContent = sumArray(summary.metrics.ig_reach).toLocaleString();
+      document.getElementById('fb-reach').textContent = sumArray(summary.metrics.fb_reach).toLocaleString();
+      document.getElementById('threads-views').textContent = sumArray(summary.metrics.threads_views).toLocaleString();
+      const ugcTotal = (summary.metrics.ugc_count.ig || 0) + (summary.metrics.ugc_count.fb || 0) + (summary.metrics.ugc_count.threads || 0);
+      document.getElementById('ugc-count').textContent = ugcTotal.toLocaleString();
+    } else {
+      ['ig-reach', 'fb-reach', 'threads-views', 'ugc-count'].forEach(id => document.getElementById(id).textContent = '—');
+    }
+  } catch (e) {
+    console.error('summary fetch failed:', e);
+  }
+
+  // UGC
+  try {
+    const ugcResp = await fetch(`${DEMO_BASE}/${client}/ugc.json`);
+    if (ugcResp.ok) {
+      const ugcs = await ugcResp.json();
+      renderUGCs(ugcs.items || []);
+    } else {
+      document.getElementById('ugcList').innerHTML = `<div class="empty-state">${client} のUGCデモデータなし</div>`;
+    }
+  } catch (e) {
+    document.getElementById('ugcList').innerHTML = `<div class="empty-state">取得エラー: ${e.message}</div>`;
+  }
+
+  // Creators
+  try {
+    const creatorsResp = await fetch(`${DEMO_BASE}/${client}/creators.json`);
+    if (creatorsResp.ok) {
+      const creators = await creatorsResp.json();
+      renderCreators(creators.items || []);
+    } else {
+      document.getElementById('creatorsTable').innerHTML = `<tr><td colspan="9" class="empty-state">${client} の発信者データなし</td></tr>`;
+    }
+  } catch (e) {}
+}
+
+function renderUGCs(items) {
+  if (items.length === 0) {
+    document.getElementById('ugcList').innerHTML = `<div class="empty-state">UGCデータなし</div>`;
+    return;
+  }
+  const html = items.map(u => `
+    <div class="ugc-card">
+      <div><span class="platform-badge ${u.platform}">${u.platform}</span></div>
+      <div>
+        <div class="ugc-content">${escapeHtml(u.text)}</div>
+        <div class="ugc-author">${escapeHtml(u.author)} · reach ${(u.reach||0).toLocaleString()} / engagement ${u.engagement||0}</div>
+        <div class="breakdown">
+          <span>影響度 ${(u.breakdown.impact * 100).toFixed(0)}%</span>
+          <span>転換 ${(u.breakdown.conversion * 100).toFixed(0)}%</span>
+          <span>継続 ${(u.breakdown.continuity * 100).toFixed(0)}%</span>
+          <span>整合 ${(u.breakdown.alignment * 100).toFixed(0)}%</span>
+        </div>
+      </div>
+      <div class="ugc-score-block">
+        <div class="score">${(u.total_score * 100).toFixed(0)}</div>
+        <div class="verdict ${u.verdict.includes('★高') ? 'high' : u.verdict === '中' ? 'mid' : 'low'}">${u.verdict}</div>
+      </div>
+    </div>
+  `).join('');
+  document.getElementById('ugcList').innerHTML = html;
+}
+
+function renderCreators(items) {
+  if (items.length === 0) {
+    document.getElementById('creatorsTable').innerHTML = `<tr><td colspan="9" class="empty-state">発信者データなし</td></tr>`;
+    return;
+  }
+  const html = items.map(c => `
+    <tr>
+      <td><span class="platform-badge ${c.platform}">${c.platform}</span></td>
+      <td><a href="${c.profile_url}" target="_blank">${escapeHtml(c.username)}</a></td>
+      <td>${(c.followers || 0).toLocaleString()}</td>
+      <td>${escapeHtml(c.relationship_type)}</td>
+      <td>${c.total_ugc_count}</td>
+      <td>${(c.store_mention_rate * 100).toFixed(0)}%</td>
+      <td>${(c.avg_like_follower_rate * 100).toFixed(2)}%</td>
+      <td class="status-${c.status}">${c.status}</td>
+      <td>${escapeHtml(c.notes || '')}</td>
+    </tr>
+  `).join('');
+  document.getElementById('creatorsTable').innerHTML = html;
+}
+
+function sumArray(arr) {
+  return (arr || []).reduce((s, v) => s + (v || 0), 0);
+}
+
+function escapeHtml(s) {
+  const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+  return String(s || '').replace(/[&<>"']/g, m => map[m]);
+}
+
+loadDashboard();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "client": "umesato",
+  "days": 7,
+  "metrics": {
+    "ig_reach": [1284, 1456, 1023, 1632, 1788, 1234, 1567],
+    "fb_reach": [856, 942, 798, 1204, 1156, 723, 891],
+    "threads_views": [428, 534, 412, 658, 612, 387, 521],
+    "ugc_count": {
+      "ig": 5,
+      "fb": 3,
+      "threads": 3
+    },
+    "ugc_top_score": {
+      "ig": 0.72,
+      "fb": 0.42,
+      "threads": 0.61
+    }
+  },
+  "last_updated": "2026-04-30T10:00:00.000Z",
+  "_demo": true
+}
